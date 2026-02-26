@@ -10,16 +10,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <div style="padding: 40px; text-align: center;">
+            <h1>📚 Lateness Tracker</h1>
+            <p>Loading...</p>
+        </div>
+    </div>
     
     <script src="js/bundle.js"></script>
     <script>
-        // Register service worker
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(reg => console.log('SW registered'))
-                .catch(err => console.log('SW error:', err));
-        }
+        // Debug: show any errors
+        window.onerror = function(msg, url, line) {
+            document.getElementById('app').innerHTML = 
+                '<div style="padding: 20px; color: red;"><h2>Error</h2><pre>' + msg + '\nLine: ' + line + '</pre></div>';
+        };
     </script>
 </body>
 </html>
