@@ -1,0 +1,9 @@
+{
+  "name": "Lateness Tracker",
+  "short_name": "Lateness",
+  "description": "Track student arrival times and generate reports",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A90D9"
+}
