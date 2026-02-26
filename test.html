@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test App</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Test Page</h1>
+    <p id="status">Loading...</p>
+    <div id="output"></div>
+    
+    <script>
+        document.getElementById('status').innerHTML = '<span class="success">✅ JavaScript is running!</span>';
+        
+        // Test localStorage
+        try {
+            localStorage.setItem('test', 'hello');
+            localStorage.removeItem('test');
+            document.getElementById('output').innerHTML += '<p class="success">✅ localStorage works</p>';
+        } catch(e) {
+            document.getElementById('output').innerHTML += '<p class="error">❌ localStorage: ' + e.message + '</p>';
+        }
+        
+        // Show app content
+        document.body.innerHTML += '<h2>App would go here</h2><p>If you see this, JS is working!</p>';
+    </script>
+</body>
+</html>
