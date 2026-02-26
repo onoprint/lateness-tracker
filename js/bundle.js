@@ -9,7 +9,7 @@
      * Load classes from storage
      */
     async load() {
-      this.classes = this.storage.get("classes") || this.getDefaultClasses();
+      this.classes = this.storage.get("classes", []);
     }
     /**
      * Save classes to storage
@@ -100,7 +100,7 @@
     /**
      * Generate unique ID
      */
-    getDefaultClasses() { return [{id:"cls_default",name:"2AEP",schedule:{monday:{enabled:true,startTime:"14:30",endTime:"16:20"},tuesday:{enabled:true,startTime:"14:30",endTime:"16:20"},wednesday:{enabled:true,startTime:"14:30",endTime:"16:20"},thursday:{enabled:true,startTime:"14:30",endTime:"16:20"},friday:{enabled:true,startTime:"14:30",endTime:"16:20"},saturday:{enabled:true,startTime:"14:30",endTime:"16:20"},sunday:{enabled:false}},createdAt:new Date().toISOString()}]; } generateId() {
+    generateId() {
       return "cls_" + Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
     }
   };
@@ -115,7 +115,7 @@
      * Load students from storage
      */
     async load() {
-      this.students = this.storage.get("students") || this.getDefaultStudents();
+      this.students = this.storage.get("students", []);
     }
     /**
      * Save students to storage
@@ -217,7 +217,7 @@
      * @param {string} classId 
      * @returns {array}
      */
-    getDefaultStudents() { const clsId="cls_default"; return [{id:"stu_1",name:"بتيت يوسف",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_2",name:"الابراهيمي الإدريسي",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_3",name:"نور الناصيح",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_4",name:"إسماعيل الخيدر",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_5",name:"آسية الألوسي",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_6",name:"مريم العكروط",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_7",name:"زينب الالوسي",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_8",name:"هاجر الألوسي",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_9",name:"إسراء الألوسي",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_10",name:"هبة الوردي",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_11",name:"جيداء الناصيح",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_12",name:"مريم بتيت",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_13",name:"ملاك ولال",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_14",name:"علاء الناصيح",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_15",name:"محمد الالوسي",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_16",name:"ريم بودة",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_17",name:"ريان الخيدر",classId:clsId,createdAt:new Date().toISOString()},{id:"stu_18",name:"امير",classId:clsId,createdAt:new Date().toISOString()}]; } getSortedByName(classId) {
+    getSortedByName(classId) {
       return this.getByClass(classId).sort(
         (a, b) => a.name.localeCompare(b.name)
       );
@@ -225,7 +225,7 @@
     /**
      * Generate unique ID
      */
-    getDefaultClasses() { return [{id:"cls_default",name:"2AEP",schedule:{monday:{enabled:true,startTime:"14:30",endTime:"16:20"},tuesday:{enabled:true,startTime:"14:30",endTime:"16:20"},wednesday:{enabled:true,startTime:"14:30",endTime:"16:20"},thursday:{enabled:true,startTime:"14:30",endTime:"16:20"},friday:{enabled:true,startTime:"14:30",endTime:"16:20"},saturday:{enabled:true,startTime:"14:30",endTime:"16:20"},sunday:{enabled:false}},createdAt:new Date().toISOString()}]; } generateId() {
+    generateId() {
       return "stu_" + Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
     }
   };
@@ -396,7 +396,7 @@
     /**
      * Generate unique ID
      */
-    getDefaultClasses() { return [{id:"cls_default",name:"2AEP",schedule:{monday:{enabled:true,startTime:"14:30",endTime:"16:20"},tuesday:{enabled:true,startTime:"14:30",endTime:"16:20"},wednesday:{enabled:true,startTime:"14:30",endTime:"16:20"},thursday:{enabled:true,startTime:"14:30",endTime:"16:20"},friday:{enabled:true,startTime:"14:30",endTime:"16:20"},saturday:{enabled:true,startTime:"14:30",endTime:"16:20"},sunday:{enabled:false}},createdAt:new Date().toISOString()}]; } generateId() {
+    generateId() {
       return "arr_" + Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
     }
   };
