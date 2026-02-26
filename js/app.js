@@ -6,12 +6,12 @@
  * @description Track student lateness, generate reports
  */
 
-import { ClassManager } from './js/models/ClassManager.js';
-import { StudentManager } from './js/models/StudentManager.js';
-import { ArrivalTracker } from './js/models/ArrivalTracker.js';
-import { ReportGenerator } from './js/models/ReportGenerator.js';
-import { UI } from './js/views/UI.js';
-import { Storage } from './js/utils/Storage.js';
+import { ClassManager } from './models/ClassManager.js';
+import { StudentManager } from './models/StudentManager.js';
+import { ArrivalTracker } from './models/ArrivalTracker.js';
+import { ReportGenerator } from './models/ReportGenerator.js';
+import { UI } from './views/UI.js';
+import { Storage } from './utils/Storage.js';
 
 class App {
     constructor() {
